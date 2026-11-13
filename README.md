@@ -35,6 +35,14 @@ Outros comandos:
 | `npm run preview` | Serve a versão de `dist/` para conferência         |
 | `npm run lint`    | Analisa o código com o Oxlint                      |
 
+## Publicação
+
+A aplicação é publicada automaticamente no **GitHub Pages** a cada push na branch `main`, pelo workflow
+`.github/workflows/deploy.yml`. Também dá para publicar manualmente em **Actions → Publicar no GitHub Pages →
+Run workflow**.
+
+Endereço: **https://thallesgomesmelo.github.io/challenge-leroy-merlin/**
+
 ## Documentação
 
 - **[Guia de uso](docs/USO.md)**: como usar cada tela e o roteiro de demonstração do pitch.
