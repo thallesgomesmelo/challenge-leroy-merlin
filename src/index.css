@@ -1,0 +1,96 @@
+@import "tailwindcss";
+
+@theme {
+  --color-brand-50: #eefbf1;
+  --color-brand-100: #d6f5dd;
+  --color-brand-500: #2fa84f;
+  --color-brand-600: #22893f;
+  --color-brand-700: #1d6d35;
+  --color-brand-900: #133f22;
+}
+
+body {
+  @apply bg-slate-100 text-slate-800 antialiased;
+}
+
+@keyframes route-flow {
+  to {
+    stroke-dashoffset: -24;
+  }
+}
+
+@keyframes route-draw {
+  from {
+    stroke-dashoffset: var(--route-length);
+  }
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+.route-base {
+  stroke-dasharray: var(--route-length);
+  animation: route-draw 1.2s ease-out forwards;
+}
+
+.route-flow {
+  stroke-dasharray: 4 8;
+  animation: route-flow 0.8s linear infinite;
+}
+
+@keyframes pulse-ring {
+  0% {
+    r: 6;
+    opacity: 0.8;
+  }
+  100% {
+    r: 20;
+    opacity: 0;
+  }
+}
+
+.pulse-ring {
+  animation: pulse-ring 1.6s ease-out infinite;
+}
+
+/* Realidade aumentada */
+@keyframes ar-chevron {
+  0%,
+  100% {
+    opacity: 0.25;
+  }
+  50% {
+    opacity: 1;
+  }
+}
+
+.ar-chevron {
+  animation: ar-chevron 0.9s ease-in-out infinite;
+}
+
+@keyframes ar-floor-move {
+  to {
+    background-position: 0 60px;
+  }
+}
+
+.ar-floor {
+  background-image:
+    linear-gradient(rgba(148, 163, 184, 0.35) 2px, transparent 2px),
+    linear-gradient(90deg, rgba(148, 163, 184, 0.35) 2px, transparent 2px);
+  background-size: 60px 60px;
+  transform: perspective(400px) rotateX(60deg);
+  transform-origin: bottom;
+  animation: ar-floor-move 1.2s linear infinite;
+}
+
+@keyframes toast-in {
+  from {
+    transform: translateY(16px);
+    opacity: 0;
+  }
+}
+
+.toast-in {
+  animation: toast-in 0.25s ease-out;
+}
